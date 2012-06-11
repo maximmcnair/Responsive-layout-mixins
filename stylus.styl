@@ -1,0 +1,22 @@
+//Changable options
+$page-width = 760
+$col-num = 6
+$margin-px = 20
+
+//Single column percentage
+$single-col-px = (($page-width - ($col-num * $margin-px)) / $col-num)
+
+//Percentages
+$single-col = (($single-col-px / $page-width) * 100)
+$margin = (($margin-px / $page-width) * 100)
+
+//Multiple Columns
+columns(n)
+  if n > 1
+    (($single-col * n) + ((n - 1) * $margin))%
+  else
+    ($single-col)%
+
+//Percentages - Ready to use
+$single-col = (($single-col-px / $page-width) * 100)%
+$margin = (($margin-px / $page-width) * 100)%
